@@ -1,18 +1,50 @@
 package com.developer.java;
 
 class Animal {
-	void walk() {
-		System.out.println("I am walking");
+	
+	WalkBehaviour walkBehaviour;
+	FlyBehaviour flyBehaviour;
+	SingBehaviour singBehaviour;
+	
+	Animal()
+	{
+		this.walkBehaviour=new CanWalk();
+		this.singBehaviour=new CannotSing();
+		this.flyBehaviour=new CannotFly();
+
 	}
+	
+	Animal(WalkBehaviour walkBehaviour)
+	{
+		this.walkBehaviour=walkBehaviour;
+	}
+	
+    void walk(){
+    	walkBehaviour.walk();
+    	}
 }
 
 class Bird extends Animal {
-	void fly() {
-		System.out.println("I am flying");
+	Bird()
+	{
+		super.flyBehaviour=new CanFly();
+		super.singBehaviour=new CanSing();
+	}
+	Bird(FlyBehaviour flyBehaviour,SingBehaviour singBehaviour)
+	{
+		super.flyBehaviour=flyBehaviour;
+		super.singBehaviour=singBehaviour;
 	}
 	
-	void sing() {
-		System.out.println("I am Singing");
+	void fly()
+	{
+		flyBehaviour.fly();
+		
+	}
+	
+	void sing()
+	{
+		singBehaviour.sing();
 	}
 }
 
