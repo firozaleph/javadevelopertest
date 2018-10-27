@@ -47,3 +47,26 @@ class  CockdoodleSound implements SoundBehaviour
 	}
 	
 }
+
+class  WoofWoofSound implements SoundBehaviour
+{
+
+	
+	public void sound() {
+		System.out.println("Woof, woof");
+		
+	}
+	
+}
+
+class  MeowSound implements SoundBehaviour
+{
+
+	
+	public void sound() {
+		System.out.println("Meow");
+		
+	}
+	
+}
+
