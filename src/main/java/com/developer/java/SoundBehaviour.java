@@ -36,3 +36,14 @@ class CannotSound implements SoundBehaviour {
 	}
 
 }
+
+class  CockdoodleSound implements SoundBehaviour
+{
+
+
+	public void sound() {
+		System.out.println("Cock-a-doodle-doo");
+		
+	}
+	
+}
