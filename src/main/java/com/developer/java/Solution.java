@@ -190,6 +190,17 @@ class Clownfish extends Fish
 	}
 }
 
+class Dolhpin extends Animal
+{
+	Fish fish=new Fish();
+	Dolhpin()
+	{
+		super.swimBehaviour=fish.swimBehaviour;
+	
+	}
+	
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
