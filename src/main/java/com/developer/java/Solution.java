@@ -215,11 +215,60 @@ class Butterfly extends Bird
 	}
 }
 
+class Frog extends Animal
+{
+	
+}
+class Dog extends Animal
+{
+	
+}
+class Cat extends Animal
+{
+	
+}
+
 public class Solution {
 	public static void main(String[] args) {
-		Bird bird = new Bird();
+		/*Bird bird = new Bird();
 		bird.walk();
 		bird.fly();
-		bird.sing();
+		bird.sing();*/
+		
+		Animal[] animals = new Animal[]{ new Bird(),
+		        new Duck(),
+		        new Chicken(),
+		        new Rooster(),
+		        new Parrot(),
+		        new Fish(),
+		        new Shark(),
+		        new Clownfish(),
+		        new Dolhpin(),
+		        new Frog(),
+		        new Dog(),
+		        new Butterfly(),
+		        new Cat()
+		};
+		
+		int fly=0,walk=0,sing=0,swim=0;
+		for(Animal animal:animals)
+		{
+			if(animal.walkBehaviour instanceof CanWalk)
+				walk=walk+1;
+			
+			if(animal.flyBehaviour instanceof CanFly)
+				fly=fly+1;
+			
+			if(animal.singBehaviour instanceof CanSing)
+				sing=sing+1;
+			
+			if(animal.swimBehaviour instanceof CanSwim)
+				swim=swim+1;
+		}
+		
+		System.out.println("how many of these animals can fly? "+fly);
+		System.out.println("how many of these animals can walk? "+walk);
+		System.out.println("how many of these animals can sing? "+sing);
+		System.out.println("how many of these animals can swim? "+swim);
 	}
 }
