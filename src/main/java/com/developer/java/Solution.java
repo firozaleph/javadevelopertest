@@ -1,5 +1,8 @@
 package com.developer.java;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Animal {
 	
 	WalkBehaviour walkBehaviour;
@@ -101,10 +104,33 @@ class Chicken extends Bird  {
 class Rooster extends Animal{
 	
 	Chicken chicken;
+	String country;
+	
 	
 	Rooster()
 	{
 		chicken=new Chicken(new CockdoodleSound());
+		
+	}
+	Rooster(String country)
+	{
+		Map<String,String> secondLanguage=new HashMap<String, String>();
+		secondLanguage.put("Danish","kykyliky");
+		secondLanguage.put("Dutch","kukeleku");
+		secondLanguage.put("French","cocorico");
+		secondLanguage.put("Finnish","kukko kiekuu");
+		secondLanguage.put("German","kikeriki");
+		secondLanguage.put("Greek","kikiriki");
+		secondLanguage.put("Hebrew","coo-koo-ri-koo");
+		secondLanguage.put("Hungarian","kukuriku");
+		secondLanguage.put("Italian","chicchirichi");
+		secondLanguage.put("Japanese","ko-ke-kok-ko-o");
+		secondLanguage.put("Portuguese","cucurucu");
+		secondLanguage.put("Russian","kukareku");
+		secondLanguage.put("Swedish","kuckeliku");
+		secondLanguage.put("Turkish","kuk-kurri-kuuu");
+		secondLanguage.put("Urdu","kuklooku");
+		chicken=new Chicken(new CustomSound(secondLanguage.get(country)));
 		
 	}
 	
@@ -112,6 +138,8 @@ class Rooster extends Animal{
 	{
 		chicken.doSound();
 	}
+	
+	
 }
 
 
