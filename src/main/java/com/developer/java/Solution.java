@@ -201,6 +201,20 @@ class Dolhpin extends Animal
 	
 }
 
+class Butterfly extends Bird
+{
+	Butterfly()
+	{
+		super(new CanFly(), new CannotSing());
+	}
+	
+	void toCaterPillar()
+	{
+		this.singBehaviour=new CannotSing();
+		this.flyBehaviour=new CannotFly();
+	}
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
