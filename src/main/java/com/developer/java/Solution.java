@@ -136,6 +136,33 @@ class Parrot extends Bird {
 	}
 }
 
+class Fish extends Animal
+{
+
+	Fish()
+	{
+		this.walkBehaviour=new CannotWalk();
+		this.singBehaviour=new CannotSing();
+		this.swimBehaviour=new CanSwim();
+		
+	}
+	
+	void doWalk()
+	{
+		walkBehaviour.walk();
+	}
+	void doSing()
+	{
+		singBehaviour.sing();
+	}
+	void doSwim()
+	{
+		swimBehaviour.swim();
+	}
+	
+	
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
