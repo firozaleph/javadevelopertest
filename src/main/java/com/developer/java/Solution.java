@@ -5,12 +5,16 @@ class Animal {
 	WalkBehaviour walkBehaviour;
 	FlyBehaviour flyBehaviour;
 	SingBehaviour singBehaviour;
+	SoundBehaviour soundBehaviour;
+	SwimBehaviour swimBehaviour;
 	
 	Animal()
 	{
 		this.walkBehaviour=new CanWalk();
-		this.singBehaviour=new CannotSing();
+		this.singBehaviour=new CannotSing();;
 		this.flyBehaviour=new CannotFly();
+		this.soundBehaviour=new CannotSound();
+		this.swimBehaviour=new CannotSwim();
 
 	}
 	
@@ -47,6 +51,48 @@ class Bird extends Animal {
 		singBehaviour.sing();
 	}
 }
+
+class Duck extends Bird {
+	
+	
+	Duck()
+	{
+		super();
+		super.swimBehaviour=new CanSwim();
+		super.soundBehaviour=new QuackSound();
+		
+		
+	}
+
+	void doSound()
+	{
+		soundBehaviour.sound();
+	}
+
+
+}
+
+class Chicken extends Bird  {
+	
+
+	Chicken()
+	{
+		super();
+		this.flyBehaviour=new CannotFly();
+		this.soundBehaviour=new CluckSound();
+		
+	}
+
+	
+	void doSound()
+	{
+		soundBehaviour.sound();
+	}
+
+
+}
+
+
 
 public class Solution {
 	public static void main(String[] args) {
